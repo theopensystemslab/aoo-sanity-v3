@@ -68,11 +68,19 @@ const entry = defineType({
         },
       ],
     },
+    // {
+    //   name: 'description',
+    //   title: 'Description',
+    //   type: 'text',
+    //   rows: 8,
+    //   description:
+    //     'A brief description of the model, identifying at high level what makes it interesting for the purposes of the Ownership Genome project.',
+    // },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 8,
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [{type: 'block'}],
       description:
         'A brief description of the model, identifying at high level what makes it interesting for the purposes of the Ownership Genome project.',
     },

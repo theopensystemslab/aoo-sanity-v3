@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {IntentLink} from 'sanity/router'
+import React from 'react'
 
 const term = defineType({
   title: 'Term',

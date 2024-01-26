@@ -14,10 +14,11 @@ const patternType = (pattern: any, type: any) =>
   defineField({
     title: type,
     name: type.toLowerCase(),
-    type: 'computedString',
+    type: 'computedNumber',
     // inputComponent: ComputedField,
     options: {
-      editable: false,
+      // editable: false,
+
       buttonText: 'Regenerate',
       documentQuerySelection: query(pattern, type.toLowerCase()),
       reduceQueryResult: (result: any) => {

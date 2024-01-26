@@ -1,5 +1,5 @@
 import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {sanityComputedField} from 'sanity-plugin-computed-field'
@@ -13,7 +13,7 @@ export default defineConfig({
   projectId: '9zzdj3qn',
   dataset: 'staging',
 
-  plugins: [deskTool(), visionTool(), sanityComputedField(), tags(), colorInput()],
+  plugins: [structureTool(), visionTool(), sanityComputedField(), tags(), colorInput()],
 
   schema: {
     types: schemaTypes,

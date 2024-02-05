@@ -129,6 +129,18 @@ const entry = defineType({
             dateFormat: 'YYYY',
           },
         },
+        {
+          name: 'startYear',
+          title: 'Start Year',
+          type: 'number',
+          description: 'Start year (use negative numbers for BCE)',
+        },
+        {
+          name: 'endYear',
+          title: 'End Year',
+          type: 'number',
+          description: 'End year (use negative numbers for BCE)',
+        },
       ],
     },
     {

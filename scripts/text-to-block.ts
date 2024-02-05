@@ -11,11 +11,6 @@ const config: ClientConfig = {
 }
 const client = createClient(config)
 
-// const data = await client.fetch<number>(`count(*)`)
-
-// data is typed as `number`
-// console.log(`Number of documents: ${data}`)
-
 const nanoid = customAlphabet('0123456789abcdef', 12)
 
 const TYPE = 'entry'
@@ -23,6 +18,8 @@ const TYPE = 'entry'
 const fetchDocuments = () => client.fetch(`*[_type == "${TYPE}"][0..50] {_id, _rev, description}`)
 
 const go = async () => {
+  // const count = await client.fetch<number>(`count(*)`)
+
   const documents = await fetchDocuments()
 
   documents.forEach((doc: any) => {
@@ -45,15 +42,6 @@ const go = async () => {
       ],
     }))
 
-    // const patch = {
-    //   id: doc._id,
-    //   patch: {
-    //     set: {
-    //       'content': output,
-    //     },
-    //     // ifRevisionID: doc._rev,
-    //   },
-    // }
     client.patch(doc._id).setIfMissing({content}).commit()
   })
 }
